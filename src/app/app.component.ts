@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IconsService } from "./services/icons.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-new-cms';
+
+  constructor(private iconService: IconsService) {}
 }
