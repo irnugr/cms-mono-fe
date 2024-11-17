@@ -10,27 +10,10 @@ import { CommonModule } from "@angular/common";
 })
 export class SidebarHomeMenuComponent {
 
-  isSidebarClosed: boolean = false;
-  isDropdownExpanded: boolean = false; // Add a new property to track the dropdown state
+  isSidebarOpen = false;
 
   toggleSidebar() {
-    this.isSidebarClosed = !this.isSidebarClosed;
-  }
-
-  toggleDropdown() {
-    this.isDropdownExpanded = !this.isDropdownExpanded;
-  }
-
-  dropdownOpen: boolean = false;
-
-  toggleDropdownUser() {
-    this.dropdownOpen = !this.dropdownOpen;
-  }
-
-  isSidebarMobileViewClosed: boolean = true;
-
-  toggleSidebarMobileView() {
-    this.isSidebarMobileViewClosed = !this.isSidebarMobileViewClosed;
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
 }

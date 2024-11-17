@@ -2,3 +2,11 @@
   top: 100%;
   right: 0;
 }
+
+#logo-sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.p-4 {
+  transition: margin-left 0.3s ease-in-out;
+}
