@@ -1,75 +1,74 @@
-<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-  <div class="px-3 py-3 lg:px-5 lg:pl-3">
-    <div class="px-1 flex items-center justify-between">
-      <div class="flex items-center justify-start rtl:justify-end">
-        <!-- Remove sm:hidden to make the button visible on all screen sizes -->
-        <button (click)="toggleSidebar()" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-          <span class="sr-only">Toggle sidebar</span>
-          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-          </svg>
-        </button>
-        <span class="px-2 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Content Management System</span>
-      </div>
-      <div class="flex items-center">
-        <div class="flex items-center ms-3 relative">
-          <!-- Toggle button -->
-          <button
-            type="button"
-            class="user-menu-toggle flex text-sm rounded-full bg-gray-200 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-            (click)="toggleUserMenu()"
-            aria-expanded="false">
-            <span class="sr-only">Open user menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-              <path
-                fill-rule="evenodd"
-                d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                clip-rule="evenodd"
-              />
+<div class="flex flex-col min-h-screen">
+  <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <button (click)="toggleSidebar()" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+            <span class="sr-only">Toggle sidebar</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
             </svg>
           </button>
+          <span class="px-2 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Content Management System</span>
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center ms-3 relative">
+            <button
+              type="button"
+              class="user-menu-toggle flex text-sm rounded-full bg-gray-300 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+              (click)="toggleUserMenu()"
+              aria-expanded="false">
+              <span class="sr-only">Open user menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path
+                  fill-rule="evenodd"
+                  d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
 
-          <!-- Dropdown menu -->
-          <div
-            [ngClass]="{
-      'hidden': !isMenuOpen,
-      'transition ease-out duration-100 transform opacity-100 scale-100': isMenuOpen,
-      'transition ease-in duration-75 transform opacity-0 scale-95': !isMenuOpen
-    }"
-            class="user-menu absolute right-0 top-10 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
-            role="menu"
-            aria-orientation="vertical"
-            tabindex="-1"
-            aria-labelledby="user-menu-button">
-            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            <!-- Dropdown menu -->
+            <div
+              [ngClass]="{
+              'hidden': !isMenuOpen,
+              'transition ease-out duration-100 transform opacity-100 scale-100': isMenuOpen,
+              'transition ease-in duration-75 transform opacity-0 scale-95': !isMenuOpen
+            }"
+              class="user-menu absolute right-0 top-10 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              tabindex="-1"
+              aria-labelledby="user-menu-button">
+              <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+              <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+              <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<aside id="logo-sidebar" [ngClass]="{'-translate-x-full': !isSidebarOpen, 'translate-x-0': isSidebarOpen}" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-  <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-    <ul class="space-y-2 font-medium">
-      <li>
-        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-          <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-          <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
-          <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
-        </a>
-      </li>
-      <!-- Dynamic Menu Items -->
-      <li *ngFor="let menu of menuItems">
-        <div (click)="toggleExpand(menu)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
-          <span class="flex-1 ms-3 whitespace-nowrap">{{ menu.menu_name }}</span>
-          <span *ngIf="menu.child_menus?.length" class="ml-auto">
+  <aside id="logo-sidebar" [ngClass]="{'-translate-x-full': !isSidebarOpen, 'translate-x-0': isSidebarOpen}" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-300 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+        <li>
+          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
+            <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+          </a>
+        </li>
+        <!-- Dynamic Menu Items -->
+        <li *ngFor="let menu of menuItems">
+          <div (click)="toggleExpand(menu)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
+            <span class="flex-1 ms-3 whitespace-nowrap">{{ menu.menu_name }}</span>
+            <span *ngIf="menu.child_menus?.length" class="ml-auto">
           <svg *ngIf="!menu.expanded" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
@@ -77,34 +76,35 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
           </svg>
         </span>
-        </div>
-        <ul [ngClass]="{'dropdown-menu expanded': menu.expanded, 'dropdown-menu': !menu.expanded}" *ngIf="menu.child_menus?.length" class="pl-4 space-y-2">
-          <li *ngFor="let child of menu.child_menus">
-            <div (click)="toggleExpand(child)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
-              <span class="flex-1 ms-3 whitespace-nowrap">{{ child.menu_name }}</span>
-              <span *ngIf="child.child_menus?.length" class="ml-auto">
-      <svg *ngIf="!child.expanded" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-      </svg>
-      <svg *ngIf="child.expanded" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
-      </svg>
-    </span>
-            </div>
-            <ul [ngClass]="{'dropdown-menu expanded': child.expanded, 'dropdown-menu': !child.expanded}" *ngIf="child.child_menus?.length" class="pl-4 space-y-2">
-              <li *ngFor="let subChild of child.child_menus" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <span class="flex-1 ms-3 whitespace-nowrap">{{ subChild.menu_name }}</span>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</aside>
+          </div>
+          <ul [ngClass]="{'dropdown-menu expanded': menu.expanded, 'dropdown-menu': !menu.expanded}" *ngIf="menu.child_menus?.length" class="pl-4 space-y-2">
+            <li *ngFor="let child of menu.child_menus">
+              <div (click)="toggleExpand(child)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
+                <span class="flex-1 ms-3 whitespace-nowrap">{{ child.menu_name }}</span>
+                <span *ngIf="child.child_menus?.length" class="ml-auto">
+              <svg *ngIf="!child.expanded" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              <svg *ngIf="child.expanded" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+              </svg>
+            </span>
+              </div>
+              <ul [ngClass]="{'dropdown-menu expanded': child.expanded, 'dropdown-menu': !child.expanded}" *ngIf="child.child_menus?.length" class="pl-4 space-y-2">
+                <li *ngFor="let subChild of child.child_menus" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <span class="flex-1 ms-3 whitespace-nowrap">{{ subChild.menu_name }}</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </aside>
 
-<div class="p-4" [ngClass]="{'sm:ml-64': isSidebarOpen}">
-  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-    Good morning guys
+  <div class="flex-1 flex flex-col p-4 mt-16" [ngClass]="{'sm:ml-64': isSidebarOpen}">
+    <div class="flex-1 p-4 border-2 border-gray-300 border-dashed rounded-lg dark:border-gray-700">
+      Good morning guys
+    </div>
   </div>
 </div>

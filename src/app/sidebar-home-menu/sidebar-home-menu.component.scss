@@ -27,3 +27,27 @@
   background-color: #f3f4f6; /* Light gray background */
   color: #1f2937; /* Dark text color */
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.sm\:ml-64 {
+  margin-left: 16rem; /* Adjust based on your sidebar width */
+}
+
+.mt-16 {
+  margin-top: 4rem; /* Adjust as needed */
+}
