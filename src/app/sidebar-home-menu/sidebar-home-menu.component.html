@@ -13,12 +13,38 @@
       </div>
       <div class="flex items-center">
         <div class="flex items-center ms-3 relative">
-          <button type="button" class="flex text-sm rounded-full bg-gray-200 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+          <!-- Toggle button -->
+          <button
+            type="button"
+            class="user-menu-toggle flex text-sm rounded-full bg-gray-200 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            (click)="toggleUserMenu()"
+            aria-expanded="false">
             <span class="sr-only">Open user menu</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-              <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
+              <path
+                fill-rule="evenodd"
+                d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                clip-rule="evenodd"
+              />
             </svg>
           </button>
+
+          <!-- Dropdown menu -->
+          <div
+            [ngClass]="{
+      'hidden': !isMenuOpen,
+      'transition ease-out duration-100 transform opacity-100 scale-100': isMenuOpen,
+      'transition ease-in duration-75 transform opacity-0 scale-95': !isMenuOpen
+    }"
+            class="user-menu absolute right-0 top-10 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
+            role="menu"
+            aria-orientation="vertical"
+            tabindex="-1"
+            aria-labelledby="user-menu-button">
+            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <a href="#" class="menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
         </div>
       </div>
     </div>

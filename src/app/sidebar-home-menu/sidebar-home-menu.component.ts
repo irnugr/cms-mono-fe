@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { MenuService } from "../services/menu.service";
 import { MenuItem } from "../models/menu-item.model";
@@ -16,6 +16,7 @@ export class SidebarHomeMenuComponent implements OnInit {
 
   menuItems: MenuItem[] = [];
   isSidebarOpen = true;
+  isMenuOpen = false;
 
   ngOnInit(): void {
     this.menuService.getMenus().subscribe(menus => {
@@ -27,8 +28,22 @@ export class SidebarHomeMenuComponent implements OnInit {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
+  toggleUserMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   toggleExpand(menu: MenuItem): void {
     menu.expanded = !menu.expanded;
+  }
+
+  //To close opened user menu
+  @HostListener('document:click', ['$event'])
+  closeUserMenu(event: Event): void {
+    const target = event.target as HTMLElement;
+    // Check if the click is outside the menu and toggle button
+    if (!target.closest('.user-menu') && !target.closest('.user-menu-toggle')) {
+      this.isMenuOpen = false;
+    }
   }
 
   sortMenuTree(menus: MenuItem[]): MenuItem[] {
