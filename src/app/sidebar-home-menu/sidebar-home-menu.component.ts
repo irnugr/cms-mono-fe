@@ -2,11 +2,12 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { MenuService } from "../services/menu.service";
 import { MenuItem } from "../models/menu-item.model";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-home-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar-home-menu.component.html',
   styleUrls: ['./sidebar-home-menu.component.scss'] // Fixed typo: styleUrl -> styleUrls
 })
@@ -21,6 +22,7 @@ export class SidebarHomeMenuComponent implements OnInit {
   ngOnInit(): void {
     this.menuService.getMenus().subscribe(menus => {
       this.menuItems = this.sortMenuTree(menus);
+      console.log(this.menuItems);
     });
   }
 
