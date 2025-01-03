@@ -34,7 +34,19 @@ export class SidebarHomeMenuComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleExpand(menu: MenuItem): void {
+  toggleExpand(menu: MenuItem, event?: Event): void {
+    // Prevent toggle logic for items without child menus
+    if (!menu.child_menus?.length) {
+      return; // Allow navigation to proceed
+    }
+
+    // Prevent the event from affecting routerLink if it's an expandable menu
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+
+    // Toggle expanded state
     menu.expanded = !menu.expanded;
   }
 
