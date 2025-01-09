@@ -8,11 +8,11 @@ import { MenuItem } from '../models/menu-item.model';
 })
 export class MenuService {
 
-  private apiUrl = 'http://localhost:8080/menus'; // URL to your Rust backend
+  private apiUrl = 'http://localhost:8080/menus';
 
   constructor(private http: HttpClient) {}
 
   getMenus(): Observable<MenuItem[]> {
-    return this.http.get<MenuItem[]>(this.apiUrl);
+    return this.http.get<MenuItem[]>(this.apiUrl+"/get-menus");
   }
 }

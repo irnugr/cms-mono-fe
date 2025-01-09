@@ -22,7 +22,7 @@ export class SidebarHomeMenuComponent implements OnInit {
   ngOnInit(): void {
     this.menuService.getMenus().subscribe(menus => {
       this.menuItems = this.sortMenuTree(menus);
-      console.log(this.menuItems);
+      //console.log(this.menuItems);
     });
   }
 
