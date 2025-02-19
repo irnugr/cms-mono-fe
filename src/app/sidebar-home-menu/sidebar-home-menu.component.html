@@ -1,7 +1,7 @@
 <div class="flex flex-col min-h-screen">
   <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between w-full">
         <div class="flex items-center">
           <button
             (click)="toggleSidebar()"
@@ -20,10 +20,19 @@
                 d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
             </svg>
           </button>
-          <span class="px-2 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Content Management System</span>
+
+          <!-- Center title - hidden on larger screens -->
+          <span class="absolute left-1/2 -translate-x-1/2 text-xl font-semibold whitespace-nowrap dark:text-white sm:hidden">
+            CMS
+          </span>
+
+          <!-- Left-aligned title - visible only on larger screens -->
+          <span class="hidden sm:block px-2 text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+            Content Management System
+          </span>
         </div>
         <div class="flex items-center">
-          <div class="flex items-center ms-3 relative">
+          <div class="flex items-center relative">
             <button
               type="button"
               class="user-menu-toggle flex text-sm rounded-full bg-gray-300 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"

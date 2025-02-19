@@ -20,6 +20,14 @@ export class SidebarHomeMenuComponent implements OnInit {
   isMenuOpen = false;
 
   ngOnInit(): void {
+    // Check window width on component initialization
+    this.checkScreenWidth();
+    
+    // Listen for window resize events
+    window.addEventListener('resize', () => {
+      this.checkScreenWidth();
+    });
+
     this.menuService.getMenus().subscribe(menus => {
       this.menuItems = this.sortMenuTree(menus);
       //console.log(this.menuItems);
@@ -48,6 +56,15 @@ export class SidebarHomeMenuComponent implements OnInit {
 
     // Toggle expanded state
     menu.expanded = !menu.expanded;
+  }
+
+  private checkScreenWidth() {
+    // Close sidebar if screen width is less than 640px (sm breakpoint)
+    if (window.innerWidth < 640) {
+      this.isSidebarOpen = false;
+    } else {
+      this.isSidebarOpen = true;
+    }
   }
 
   //To close opened user menu
